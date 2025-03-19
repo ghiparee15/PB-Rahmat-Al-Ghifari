@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -60,5 +60,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
         });
-    }
+        signUp.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(intent);
+        });    }
 }
